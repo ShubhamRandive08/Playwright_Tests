@@ -93,12 +93,5 @@ test('Validate Home Page', async ({page}) =>{
     await expect(page.getByText('The student report has been')).toBeVisible();
     await expect(page.getByRole('button', { name: 'OK' })).toBeVisible();
     await page.getByRole('button', { name: 'OK' }).click();
-    // await expect(page.getByRole('link', { name: 'Shubham Balavant Randive 󰅀' })).toBeVisible();
-    // await page.getByRole('link').click();
-    // await page.getByText('Logout').click();
-    // await expect(page.getByText('Logout')).toBeVisible();
-    // await expect(page.getByRole('button', { name: 'Yes, logout!' })).toBeVisible();
-    // await page.getByRole('button', { name: 'Yes, logout!' }).click();
-    // await expect(page.locator('.content-wrapper')).toBeVisible();
     await page.close();
 })
