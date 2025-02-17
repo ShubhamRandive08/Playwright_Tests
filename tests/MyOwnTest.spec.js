@@ -20,7 +20,6 @@ test('Validate Login Page', async ({page}) =>{
     await expect(page.getByRole('button', { name: 'SIGN IN' })).toBeVisible();
     await page.getByRole('button', { name: 'SIGN IN' }).click();
     await page.waitForTimeout(8000)
-    await page.close()
 });
 
 test('Validate Register Page', async ({page})=>{
@@ -41,7 +40,6 @@ test('Validate Register Page', async ({page})=>{
     await page.getByRole('button', { name: 'SIGN UP' }).click();
     await expect(page.getByRole('button', { name: 'OK' })).toBeVisible();
     await page.getByRole('button', { name: 'OK' }).click();
-    await page.close()
 });
 
 
@@ -67,7 +65,40 @@ test('Login as new Credintails', async ({page}) => {
     await expect(page.getByRole('button', { name: 'Yes, logout!' })).toBeVisible();
     await page.getByRole('button', { name: 'Yes, logout!' }).click();
     await expect(page.getByRole('heading', { name: 'Hello TEACHERS ! let\'s get' })).toBeVisible();
-    await page.waitForTimeout(5000);
     await page.close();
 })
 
+test('Validate Home Page', async ({page}) =>{
+    await page.goto('http://127.0.0.1:5501/collage_addmission_process_project/src/index.html')
+    await expect(page.getByRole('button', { name: '󰒿' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Welcome back,' })).toBeVisible();
+    await expect(page.getByRole('button', { name: '󰇚' })).toBeVisible();
+    await page.getByRole('button', { name: '󰇚' }).click();
+    await expect(page.locator('div').filter({ hasText: '!' }).nth(2)).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Are you sure?' })).toBeVisible();
+    await expect(page.getByText('Do you want to download the')).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Yes, download it!' })).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Cancel' })).toBeVisible();
+    await page.getByRole('button', { name: 'Cancel' }).click();
+    await expect(page.locator('.content-wrapper')).toBeVisible();
+    await page.getByRole('button', { name: '󰇚' }).click();
+    await expect(page.locator('div').filter({ hasText: '!' }).nth(2)).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Are you sure?' })).toBeVisible();
+    await expect(page.getByText('Do you want to download the')).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Yes, download it!' })).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Cancel' })).toBeVisible();
+    await page.getByRole('button', { name: 'Yes, download it!' }).click();
+    await expect(page.locator('.swal2-success-ring')).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Downloaded!' })).toBeVisible();
+    await expect(page.getByText('The student report has been')).toBeVisible();
+    await expect(page.getByRole('button', { name: 'OK' })).toBeVisible();
+    await page.getByRole('button', { name: 'OK' }).click();
+    // await expect(page.getByRole('link', { name: 'Shubham Balavant Randive 󰅀' })).toBeVisible();
+    // await page.getByRole('link').click();
+    // await page.getByText('Logout').click();
+    // await expect(page.getByText('Logout')).toBeVisible();
+    // await expect(page.getByRole('button', { name: 'Yes, logout!' })).toBeVisible();
+    // await page.getByRole('button', { name: 'Yes, logout!' }).click();
+    // await expect(page.locator('.content-wrapper')).toBeVisible();
+    await page.close();
+})
