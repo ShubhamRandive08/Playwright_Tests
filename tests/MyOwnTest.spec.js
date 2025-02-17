@@ -26,6 +26,7 @@ test('Validate Login Page', async ({page}) =>{
 test('Validate Register Page', async ({page})=>{
     await page.goto('http://127.0.0.1:5501/collage_addmission_process_project/index.html')
     await expect(page.getByRole('link', { name: 'Create' })).toBeVisible();
+    await page.screenshot({path : 'screenshot.png'})
     await page.getByRole('link', { name: 'Create' }).click();
     await expect(page.getByRole('textbox', { name: 'Full Name' })).toBeVisible();
     await page.getByRole('textbox', { name: 'Full Name' }).click();
