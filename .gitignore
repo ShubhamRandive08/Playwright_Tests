@@ -10,3 +10,4 @@ node_modules/
 /package-lock.json
 /playwright.config.js
 /.eslintrc.json
+/UI Test
