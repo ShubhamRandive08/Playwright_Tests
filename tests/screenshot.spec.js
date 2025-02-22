@@ -2,7 +2,7 @@
 const { test, expect } = require('@playwright/test')  
 
 test('Take a screenshot in playwright', async ({ page }) => {
-    await page.goto('https://www.youtube.com/@testerstalk')
+    await page.goto('https://www.youtube.com/@Mr.Shubham_Randive')
 
     // Element Screenshot
     await page.locator("[class = 'yt-spec-avatar-shape__image-overlays yt-spec-avatar-shape__image']").screenshot({path : './Screenshots/element.png'})
