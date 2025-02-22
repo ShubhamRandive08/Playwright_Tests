@@ -42,6 +42,4 @@ test.describe('Test Cases for iframe in playwright the Drag and Drop Functionali
         await dragElement.dragTo(dropElement)
 
     })
-
-    
 })
