@@ -54,7 +54,7 @@ test('Locator Test', async ({page}) =>{
 
     await page.goto('https://www.youtube.com')
     await page.locator("[name = 'search_query']").click()
-    await page.locator("[aria-controls = 'i0']").fill('Github with A to Z with Shubham')
+    await page.locator("[aria-controls = 'i0']").type('Github with A to Z with Shubham')
     await page.locator("[name = 'search_query']").press('Enter')
     await page.getByText('What Is GitHub? | GitHub Profile Creation | Use of GitHub | Part I').click();
 

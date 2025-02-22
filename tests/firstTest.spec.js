@@ -21,6 +21,8 @@ test('Validate Youtube title', async ({ page }) => {
 
     // Validate title
     await expect(page).toHaveTitle('Cypress Tutorial Full Course | Cypress Automation | Learn Cypress in 5 Hrs - YouTube');
+
+    await page.close();
 })
 
 
