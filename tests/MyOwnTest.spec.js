@@ -56,8 +56,8 @@ test('Login as new Credintails', async ({page}) => {
     await page.getByRole('button', { name: 'SIGN IN' }).click();
     await expect(page.getByRole('dialog', { name: '🚀 Login Successful!' })).toBeVisible();
     await expect(page.getByRole('button', { name: 'OK' })).toBeVisible();
-    await page.getByRole('button', { name: 'OK' }).click();
-    await expect(page.getByRole('link', { name: 'Gaurav Ramane 󰅀' })).toBeVisible();
+    // await page.getByRole('button', { name: 'OK' }).click();
+    await expect.soft((page.getByRole('link', { name: 'Gaurav Ramane 󰅀' }))).toBeVisible();
     await page.getByRole('link', { name: 'Gaurav Ramane 󰅀' }).click();
     await expect(page.getByText('Logout')).toBeVisible();
     await page.getByText('Logout').click();

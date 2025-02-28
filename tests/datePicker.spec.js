@@ -10,16 +10,17 @@ test.describe('Date Picker', async () =>{
 
 
         // Today's date
-        await frameElement.locator(".ui-datepicker-today").click();
+        // await frameElement.locator(".ui-datepicker-today").click();
 
-        await page.waitForTimeout(10000)
+        // await page.waitForTimeout(10000)
 
         // Custom Date
          const defaultDate = frameElement.locator('.ui-datepicker-today > a')
          const currentDateValue = await defaultDate.getAttribute('data-date') // 28 as today
 
-         let customDate = parseInt((currentDateValue) - 3) 
-         const element = `[date-date ='${customDate.toString()}']`
+         let customDate = (parseInt(currentDateValue) - 3)
+
+         const element = "[data-date=" + "'"+customDate.toString()+"'"+"]"
 
          await frameElement.locator(element).click()
 
