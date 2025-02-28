@@ -1,7 +1,7 @@
 const {test,expect} = require('@playwright/test');
 
 test('Validate Login Page', async ({page}) =>{
-    await page.goto('http://127.0.0.1:5501/collage_addmission_process_project/index.html')
+    await page.goto('http://127.0.0.1:5502/collage_addmission_process_project/index.html')
     await page.getByRole('textbox', { name: 'Username' }).click()
     await page.getByRole('textbox', { name: 'Username' }).fill('srandive245@gmail.com')
     await page.getByRole('textbox', { name: 'Password' }).click()
@@ -23,7 +23,7 @@ test('Validate Login Page', async ({page}) =>{
 });
 
 test('Validate Register Page', async ({page})=>{
-    await page.goto('http://127.0.0.1:5501/collage_addmission_process_project/index.html')
+    await page.goto('http://127.0.0.1:5502/collage_addmission_process_project/index.html')
     await expect(page.getByRole('link', { name: 'Create' })).toBeVisible();
     // await page.screenshot({path : 'screenshot.png'})
     await page.getByRole('link', { name: 'Create' }).click();
@@ -44,7 +44,7 @@ test('Validate Register Page', async ({page})=>{
 
 
 test('Login as new Credintails', async ({page}) => {
-    await page.goto('http://127.0.0.1:5501/collage_addmission_process_project/src/pages/samples/register.html')
+    await page.goto('http://127.0.0.1:5502/collage_addmission_process_project/src/pages/samples/register.html')
     await expect(page.getByRole('link', { name: 'Login' })).toBeVisible();
     await page.getByRole('link', { name: 'Login' }).click();
     await page.waitForTimeout(3000)
@@ -69,7 +69,7 @@ test('Login as new Credintails', async ({page}) => {
 })
 
 test('Validate Home Page', async ({page}) =>{
-    await page.goto('http://127.0.0.1:5501/collage_addmission_process_project/src/index.html')
+    await page.goto('http://127.0.0.1:5502/collage_addmission_process_project/src/index.html')
     await expect(page.getByRole('button', { name: '󰒿' })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Welcome back,' })).toBeVisible();
     await expect(page.getByRole('button', { name: '󰇚' })).toBeVisible();
