@@ -4,7 +4,7 @@ import exp from 'constants'
 test.describe('Playwright tests for keyboard action', async () =>{
     test('Test No.01 : Keybord Action', async ({page}) => {
         page.goto('https://www.youtube.com/')
-
+ 
         await expect(page.locator("//input[@name = 'search_query']")).toBeVisible();
         
         await page.locator("//input[@name = 'search_query']").click()
