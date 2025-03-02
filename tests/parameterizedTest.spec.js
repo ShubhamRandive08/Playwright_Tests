@@ -19,5 +19,4 @@ for (const searchKeyword of testPara) {
         await page.waitForTimeout(5000)
     
     })
-    
 }
