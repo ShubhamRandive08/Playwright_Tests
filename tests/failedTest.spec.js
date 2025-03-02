@@ -14,8 +14,6 @@ test('Validate Youtube title', async ({ page }) => {
     await expect(page.getByRole('button', { name: 'Search', exact: true })).toBeEnabled();
     await page.getByRole('button', { name: 'Search', exact: true }).click();
 
-    await page.waitForTimeout(5000);
-
     //Click on playlist
     await page.getByRole('link', { name: 'Cypress by Testers Talk☑️' }).click();
 
