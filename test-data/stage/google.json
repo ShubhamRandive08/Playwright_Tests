@@ -4,10 +4,10 @@
         "skill2" : "Cypress By Testers Talk",
         "skill3" : "Javascript by testers talk"
     },
-    "qaTestData" : {
-        "skill1" : "Playwright by testers talk",
-        "skill2" : "Cypress By Testers Talk",
-        "skill3" : "Javascript by testers talk"
+    "StageTestData" : {
+        "skill1" : "api testing by testers talk",
+        "skill2" : "specflow By Testers Talk",
+        "skill3" : "easyrepro by testers talk"
     }
 
 }
