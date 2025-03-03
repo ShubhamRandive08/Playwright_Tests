@@ -5,6 +5,10 @@ const { test, expect } = require('@playwright/test')  // test - It is used to cr
 // Write a test
 // page - page is the object with the help of that we can interact with the browser.
 test('Validate Youtube title', async ({ page }) => {
+    await page.setViewportSize({
+        width : 1536 ,
+        height : 816
+    })
     await page.goto('https://www.youtube.com/')
 
     // Go to URL
