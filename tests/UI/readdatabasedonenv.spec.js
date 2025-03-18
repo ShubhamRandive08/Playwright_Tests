@@ -1,7 +1,7 @@
 const {test, expect} = require('@playwright/test')
-import {qaTestData} from '../test-data/qa/google.json'
+import {qaTestData} from '../../test-data/qa/google.json'
 
-import {StageTestData} from '../test-data/stage/google.json'
+import {StageTestData} from '../../test-data/stage/google.json'
 
 test.describe('Module Test', async () => {
     let testData = null 

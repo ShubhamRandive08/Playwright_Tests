@@ -1,9 +1,9 @@
 // Include playwright module
 const { test, expect } = require('@playwright/test')  
 
- const {HomePage} = require('../pages/homepage')
- const {ResultPage} = require('../pages/resultpage')
- const {PlaylistPage} = require('../pages/playlist')
+ const {HomePage} = require('../../pages/homepage')
+ const {ResultPage} = require('../../pages/resultpage')
+ const {PlaylistPage} = require('../../pages/playlist')
 
 
 test('POM in playwright', async ({ page }) => {
